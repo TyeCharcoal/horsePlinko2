@@ -10,26 +10,28 @@ left = 40
 right = 40
 peg = "o"
 air = " "
-board = (peg + air) * left + horse + (air + peg) * right        #this is the formula to print the board
+board1 = (air + peg) * left + horse + (peg + air) * right        #this is the formula to print the boards larger variant
+board2 = air + (air + peg) * (left - 1) + horse + (peg + air) * right
 void = (air * 2) * left + horse + (air * 2) * right 
 
-print(void)
-
-"""
-start = input("Would You Like To Play: Traditional [1], Random Encounter [2]")
 
 #function to choose which side the horse falls to
 def slide():
+    time.sleep(.5)
     x = random.randint(1,2)
     if x == 1:
-        left + 1
+        left += 1
+        right -= 1
+        print(board1)
     else:
-        right + 1
-
-print(board)
-
+        left -= 1
+        right += 1
+        print(board1)
 
 #Game
-if start == 1:
-"""
+print(board1)
+for n in range(100):
+    slide()
+
+
 
