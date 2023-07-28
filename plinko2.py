@@ -1,4 +1,4 @@
-#7/24/23
+#7/28/23
 #Tye
 
 import time
@@ -10,28 +10,34 @@ left = 40
 right = 40
 peg = "o"
 air = " "
-board1 = (air + peg) * left + horse + (peg + air) * right        #this is the formula to print the boards larger variant
-board2 = air + (air + peg) * (left - 1) + horse + (peg + air) * right
-void = (air * 2) * left + horse + (air * 2) * right 
 
+#functions for board printing
+def print_board1():
+    board1 = (air + peg) * left + horse + (peg + air) * right
+    print(board1)
+
+def print_board2():
+    board2 = air + (air + peg) * (left - 1) + horse + (peg + air) * right
+    print(board2)
+
+def print_void():
+    void = (air * 2) * left + horse + (air * 2) * right 
+    print(void)
 
 #function to choose which side the horse falls to
 def slide():
     time.sleep(.5)
     x = random.randint(1,2)
     if x == 1:
-        left += 1
-        right -= 1
-        print(board1)
+        left + 1
+        right - 1
+        print_board1()
     else:
-        left -= 1
-        right += 1
-        print(board1)
+        left - 1
+        right + 1
+        print_board1()
 
 #Game
-print(board1)
+print_board1()
 for n in range(100):
     slide()
-
-
-
